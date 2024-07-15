@@ -11,7 +11,10 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
   const [gameStatus, setGameStatus] = useState("");
   const [message, setMessage] = useState(1);
 
-  const socket = useMemo(() => io("http://localhost:8000"), []);
+  // const socket = useMemo(() => io("http://localhost:8000"), []);
+  const socket = useMemo(() => io("https://rock-paper-game-alpha.vercel.app/"), []);
+  console.log(socket)
+  
 
   useEffect(() => {
     // Listener for receiving own ID

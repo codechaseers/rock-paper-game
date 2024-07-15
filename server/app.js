@@ -10,14 +10,14 @@ const server=createServer(app)
 
 
 //io server creating
-const io=new Server(server,{
-    cors:{
-    origin:"http://localhost:5173",
-    methods:["GET","POST"],
-    credentials:true
+const io = new Server(server, {
+    cors: {
+        origin: "https://rock-paper-game-alpha-azure.vercel.app",
 
+        methods: ["GET", "POST"],
+        credentials: true
     }
-})
+});
 // io.on("connection",(socket)=>{
 //     console.log("id is : ",socket.id)
 //     socket.emit("id",socket.id)
