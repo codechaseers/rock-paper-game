@@ -1,0 +1,389 @@
+.mainboard{
+    height: 100vh;
+    width: 100vw;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+ 
+    background: linear-gradient( rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url("../assets/background/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.gameboard{
+    /* outline: auto; */
+    height: 40vmax;  
+    width: 75vmax;
+    background:  url("../assets/background/board-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+   
+
+}
+.point_container{
+   
+   /* outline: auto; */
+    width: 75vmax;
+    height: 10vmax;
+    display: flex;    
+    justify-content: space-between; 
+    align-items: center;
+}
+.player1_point{
+    /* outline: auto; */
+    height: 7vmax;
+    width: 20vmax;
+    display: flex;
+    align-items: center;
+    
+        
+    }
+.player2_point{
+/* outline: auto; */
+height: 7vmax;
+width: 20vmax;
+display: flex;
+align-items: center;
+justify-content: right;
+}
+.profile_icon{
+    
+     font-size: 5em;
+}
+.star_icons{
+    font-size: 2em;
+}
+
+
+
+
+.players{
+    /* outline: auto; */
+    height: 30vmax;
+    /* width: 60em; */
+    width: 75vmax;
+    display: flex;    
+    justify-content: space-between; 
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+.player1{
+    /* outline: auto; */
+    height: 22vmax;
+    width: 25vmax;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+   
+
+}
+.player2{
+    /* outline: auto; */
+    height: 22vmax;
+    width: 25vmax;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+
+.action_image{
+    height: 15vmax;
+    width: 130vmax;
+}
+
+
+
+.controlars{
+    /* outline: auto; */
+    margin-top: 2em;
+    display: flex;
+    
+    /* width: 27vmax; */
+    align-items: center;
+    /* justify-content: space-between; */   
+
+  
+}
+.control_button{
+ /* outline: auto; */
+ background: #f9f2e1f1;
+    height: 3.4em;
+    width: 3.4em;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   border-radius: 50%;
+}
+.button_image{
+    height: 3.4em;
+    width:3.4em; 
+}
+
+.control_button:hover{
+    background: #171616f1;
+    transition: 0.3s;
+  cursor: pointer;
+
+}
+
+
+
+/* ---------------------- MEDIA QUERY -------------------- */
+
+
+@media (min-width: 320px )and (max-width:320px) {
+    .players{
+        outline: none;
+
+        width: 70vmax;
+    }
+    .gameboard{
+        height: 60vmax;
+    }
+    .profile_icon{
+    
+        font-size: 2.8em;
+   }
+   .star_icons{
+       font-size: 0.7em;
+   }
+    
+ 
+
+}
+@media (max-width: 428px  )and (min-width:361px) {
+    .players{
+        outline: red;
+        /* background: #000; */
+       
+
+        width: 58vmax;
+    }
+    .point_container{
+        width: 58vmax;
+    }
+    .gameboard{
+        height: 50vmax;
+    }
+    .profile_icon{
+    
+        font-size: 3em;
+   }
+   .star_icons{
+       font-size: 1em;
+   }
+}
+ 
+@media (max-width: 360px  )and (min-width:326px) {
+    .players{
+        outline: red;
+        /* background: #000; */
+       
+
+        width: 49vmax;
+    }
+    .point_container{
+        width: 49vmax;
+    }
+    .gameboard{
+        height: 49vmax;
+    }
+    .profile_icon{
+    
+        font-size: 3em;
+   }
+   .star_icons{
+       font-size: 1em;
+   }
+    .player1{
+       
+        height: 17vmax;
+        width: 18vmax;
+      
+    
+    } .player2{
+        height: 17vmax;
+        width: 18vmax;
+    
+    }
+     
+    .action_image{
+        height: 12vmax;
+        width: 130vmax;
+    }
+ 
+   
+  
+}
+
+img{
+    animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 2);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    
+  }
+  
+  @keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+ 
+
+
+/* ----------------Resuletboard css----------------- */
+
+.resuletboard{
+    height: 40vmax;  
+    width: 75vmax;
+    background-color: rgba(255, 255, 255, 0.037) ;
+     /* background:  url("../assets/background/party_paper.png");
+     background-repeat: no-repeat;
+     background-size: cover;     */
+    
+    border-radius: 16px;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+   box-shadow: 10px 1px 27px -8px rgba(0,0,0,0.22);
+    backdrop-filter: blur(5px); 
+ 
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+.scoreboard_heading{
+    text-align: center;
+    color: #e1e3e691;
+    font-size: 5em;
+    text-decoration: underline;
+}
+
+.scoreboad{
+    /* outline: auto; */
+    height: 10vmax;
+    /* width: 60em; */
+    width: 75vmax;
+    display: flex;    
+    justify-content:center; 
+    align-items: center;
+     
+}
+.score{
+    height: 4em ;
+    width: 8em;
+    /* outline: auto; */
+    margin: 2em;
+}
+
+.player1_socre{
+    height: 3em ;
+    width: 8em;
+    /* outline: auto; */
+}.player2_socre{
+    height: 3em ;
+    width: 8em;
+    /* outline: auto; */
+}
+#score_resulet{
+    font-size: 2.9em;
+    color: #ffffffb6;
+}
+.score_details{
+    text-align: center;
+    font-size: 2em;
+    color: #e1e3e691;
+    margin: auto;
+    font-weight: 600;
+}
+.playagain{
+ 
+    border: 2px solid #e1e3e691;
+
+    height: 3.4em;
+    width: 12em;
+    margin: auto;
+    border-radius: 13px;
+    font-size: large;
+    font-weight: 600;
+    background: rgba(8, 255, 247, 0.495);
+    background:none;
+    color: rgb(254, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: 0.3s;
+
+}
+.playagain:hover,.button:hover{
+    border: none;
+    /* border: 2px solid rgb(252, 252, 252); */
+    background-color: rgba(15, 224, 220, 0.571);
+    transition: 0.3s;
+    cursor:pointer;
+    
+}
+ 
+
+
+
+
+/* -------------------- MODE SELECT AND CONNECTION SECTION ------------------- */
+
+.connection_container{
+    /* outline: auto; */
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* width: 75vmax; */
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.idHeading{
+    color: #ffffffb6;
+    margin-top: 1em;
+}.idField{
+    outline: none;
+    border: 2px solid #4fa8b091;
+    background: #4f54b04c;
+    height: 1.8em;
+    width: 16em;
+    color: #ffffffd2;
+    font-size: large;
+ border-radius: 8px;
+}
+.button{
+    border: 2px solid #e1e3e691;
+
+    height: 2.8em;
+    width: 12em;
+    margin: 1em;
+   
+    border-radius: 13px;
+    font-size: large;
+    font-weight: 600;
+   
+    background:none;
+    color: rgb(254, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: 0.3s;
+
+
+}
