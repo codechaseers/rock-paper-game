@@ -248,6 +248,7 @@ img{
 /* ----------------Resuletboard css----------------- */
 
 .resuletboard{
+    /* outline: auto; */
     height: 40vmax;  
     width: 75vmax;
     background-color: rgba(255, 255, 255, 0.037) ;
@@ -266,6 +267,7 @@ img{
 
     display: flex;
     align-items: center;
+   
     /* justify-content: center; */
     flex-direction: column;
 }
@@ -278,9 +280,10 @@ img{
 
 .scoreboad{
     /* outline: auto; */
-    height: 10vmax;
+    height: 40vmax;
+    /* width: 2em; */
     /* width: 60em; */
-    width: 75vmax;
+    /* width: 75vmax; */
     display: flex;    
     justify-content:center; 
     align-items: center;
@@ -316,6 +319,7 @@ img{
 .playagain{
  
     border: 2px solid #e1e3e691;
+    
 
     height: 3.4em;
     width: 12em;
@@ -328,6 +332,7 @@ img{
     color: rgb(254, 255, 255);
     font-family: Georgia, 'Times New Roman', Times, serif;
     transition: 0.3s;
+    /* margin-top: 1em; */
 
 }
 .playagain:hover,.button:hover{
@@ -338,7 +343,14 @@ img{
     cursor:pointer;
     
 }
- 
+@media (max-width: 414px  ){
+    .scoreboad{
+        width: 2em;
+    }
+    .resuletboard{
+        height: 80vmax;
+    }
+ }
 
 
 
