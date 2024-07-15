@@ -79,7 +79,8 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
         <Gamelogic
         mode={"friend"}
         sendMessage={sendMessage}
-        message={message}/>
+        message={message}
+        SetMultiplayerMode={SetMultiplayerMode  }/>
       ) : (
         <div className="resuletboard">
           <div className="connection_container">

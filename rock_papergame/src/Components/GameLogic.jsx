@@ -4,7 +4,7 @@ import clicksound from "../assets/audio/clickSound.mp3";
 import pointsound from "../assets/audio/point.mp3";
 import { useState, useEffect } from "react";
 
-const Gamelogic = ({mode,sendMessage,message}) => {
+const Gamelogic = ({mode,sendMessage,message,SetMultiplayerMode}) => {
   let [player1, setPlayer1] = useState(1);
   const [player2, setPlayer2] = useState(1);
   let [player1Score, setPlayer1Score] = useState(0);
@@ -92,6 +92,7 @@ const Gamelogic = ({mode,sendMessage,message}) => {
         setResuletStatus={setResuletStatus}
         setPlayer1Score={setPlayer1Score}
         setPlayer2Score={setPlayer2Score}
+        SetMultiplayerMode={SetMultiplayerMode}
         />
       ) : (
         <Game

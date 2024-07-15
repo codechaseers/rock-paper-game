@@ -1,6 +1,15 @@
-const Resuletboard = ({setResuletStatus,resuletStatus,player1Score,player2Score,setPlayer1Score,setPlayer2Score}) => {
+import { useState } from "react";
+import Startpoint from "./Startpoint";
+
+const Resuletboard = ({setResuletStatus,resuletStatus,player1Score,player2Score,setPlayer1Score,setPlayer2Score,SetMultiplayerMode}) => {
+
+let [manu ,setManu]=useState(false)
+
   return (
-    <>
+   
+    <> 
+    {manu?<Startpoint/>:
+
       <div className="resuletboard">
         <h2 className="scoreboard_heading">Score Board</h2>
         <div className="scoreboad">
@@ -16,9 +25,11 @@ const Resuletboard = ({setResuletStatus,resuletStatus,player1Score,player2Score,
         </div>
         
 
-        <button className="playagain" onClick={()=>{setResuletStatus(false),setPlayer1Score(0),setPlayer2Score(0)}}>Play Again</button>
-        
+        <button className="playagain" onClick={()=>{setResuletStatus(false),setPlayer1Score(0),setPlayer2Score(0)}}>Play Again</button> 
+          <button className="playagain" onClick={()=>{ setPlayer1Score(0),setPlayer2Score(0), setManu(true) }}>Back To Manu</button>
+       
       </div>
+}
     </> 
   );
 };
