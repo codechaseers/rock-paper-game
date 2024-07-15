@@ -1,5 +1,6 @@
 import express from "express";
 import { createServer } from "http"
+import { send } from "process";
 import { Server } from "socket.io";
 
 const app=express()
@@ -74,7 +75,7 @@ socket.on('choice',(message,room)=>{
 
 app.get('/',(req,res)=>{
     console.log("server start");
-    res.send(`<h1>hloow  rock paper game</h1>`)
+    res.status(200).send("hello form the server and your app is start")
 })
 server.listen(port,()=>{
     console.log(`app lisisten on port ${port}`);
