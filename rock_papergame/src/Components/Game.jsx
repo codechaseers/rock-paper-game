@@ -118,7 +118,8 @@ const Game = ({imageKey,player1,userAction,player2,player1Score,player2Score}) =
             ) : (
               <>
                <p className="loading-player2">Loading....</p>
-              
+               
+             
               </>
             )}
 
