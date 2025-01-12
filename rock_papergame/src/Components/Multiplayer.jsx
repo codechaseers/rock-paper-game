@@ -12,7 +12,7 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
   const [message, setMessage] = useState(null);
 
   // const socket = useMemo(() => io("http://localhost:8000"), []);
-  const socket = useMemo(() => io("http://localhost:8000"), []);
+  const socket = useMemo(() => io("https://rock-paper-game.onrender.com"), []);
   console.log(socket)
   
 
