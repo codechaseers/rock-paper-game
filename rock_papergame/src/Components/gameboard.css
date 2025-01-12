@@ -333,7 +333,7 @@ img{
  
 
 
-@media (min-width: 320px )and (max-width:420px) {
+@media (min-width: 320px )and (max-width:600px) {
     .mainboard{
         width: 100vw;
     /* justify-content: flex-start; */
@@ -414,27 +414,5 @@ img{
 
 
 
-@media (min-width: 421px  )and(max-width: 621px ){
-    .scoreboad{
-        width: 2em;
-    }
-    .resuletboard{
-        height: 80vmax;
-    }
-    .point_container{
-   
-        /* outline: auto;
-        background: #000; */
-         width: 45vmax;
-         height: 10vmax;
-        
-         display: flex;    
-         justify-content: space-between; 
-         align-items: baseline;
-     }
-     .profile_icon{
-    
-        font-size: 1.8em;
-   }
- }
+ 
  
