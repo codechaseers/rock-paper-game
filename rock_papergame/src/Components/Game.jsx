@@ -57,39 +57,29 @@ const Game = ({imageKey,player1,userAction,player2,player1Score,player2Score}) =
             </div>
           </div>
         </div>
+
+        
         <div className="players">
+
           <div className="player1">
-            {player1 == 0 ? (
-              <img
-                key={imageKey}
-                className="action_image"
-                src={ThumsUp}
-                alt=""
-              />
-            ) : (
-              <></>
-            )}  
-            {player1 == 1 ? (
+
+            {  player1 == "rock" ? (
               <img
                 key={imageKey}
                 className="action_image"
                 src={rockhand1}
                 alt=""
               />
-            ) : (
-              <></>
-            )}
-            {player1 == 2 ? (
+            )  
+            : player1 == "paper" ? (
               <img
                 key={imageKey}
                 className="action_image"
                 src={paperHand1}
                 alt=""
               />
-            ) : (
-              <></>
-            )}
-            {player1 == 3 ? (
+            ) :
+            player1 == "scissors" ? (
               <img
                 key={imageKey}
                 className="action_image"
@@ -97,41 +87,28 @@ const Game = ({imageKey,player1,userAction,player2,player1Score,player2Score}) =
                 alt=""
               />
             ) : (
-              <></>
+              <>
+           
+              <p className="loading-player1">Loading....</p>
+              </>
             )}
           </div>
           <div className="player2">
-            {player2 == 0 ? (
-              <img
-                key={imageKey}
-                className="action_image"
-                src={ThumsUp}
-                alt=""
-              />
-            ) : (
-              <></>
-            )}
-            {player2 == 1 ? (
+            {  player1&&player2 == "rock" ? (
               <img
                 key={imageKey}
                 className="action_image"
                 src={rockhand2}
                 alt=""
               />
-            ) : (
-              <></>
-            )}
-            {player2 == 2 ? (
+            ) :player1&& player2 == "paper" ? (
               <img
                 key={imageKey}
                 className="action_image"
                 src={paperHand2}
                 alt=""
               />
-            ) : (
-              <></>
-            )}
-            {player2 == 3 ? (
+            ) : player1 && player2 == "scissors" ? (
               <img
                 key={imageKey}
                 className="action_image"
@@ -139,25 +116,33 @@ const Game = ({imageKey,player1,userAction,player2,player1Score,player2Score}) =
                 alt=""
               />
             ) : (
-              <></>
+              <>
+               <p className="loading-player2">Loading....</p>
+              
+              </>
             )}
 
             {/* <img  className="action_image" src={paperHand2} alt="" /> */}
             {/* <img  className="action_image" src={ SecciorHand2} alt="" /> */}
           </div>
-        </div>
-
+          
+       </div>
+{ player1==null ?
         <div className="controlars">
-          <div className="control_button" onClick={() => userAction(1)}>
+          <div className="control_button" onClick={() => userAction("rock")}>
             <img className="button_image" src={rock} alt="" />
           </div>
-          <div className="control_button" onClick={() => userAction(2)}>
+          <div className="control_button" onClick={() => userAction("paper")}>
             <img className="button_image" src={paper} alt="" />
           </div>
-          <div className="control_button" onClick={() => userAction(3)}>
+          <div className="control_button" onClick={() => userAction("scissors")}>
             <img className="button_image" src={scissor} alt="" />
           </div>
         </div>
+        :
+        <></>
+}
+
       </div>
     </>
   );

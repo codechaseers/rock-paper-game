@@ -399,3 +399,19 @@ img{
 
 
 }
+
+.loading-player1{
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    margin-left: auto;
+
+
+}.loading-player2{
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    margin-right: auto;
+
+
+}

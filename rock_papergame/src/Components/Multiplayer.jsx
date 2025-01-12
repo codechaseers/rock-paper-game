@@ -9,10 +9,10 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
   const [coonectionStatus, SetCoonectionStatus] = useState(false);
   const [roomID, setRoomID] = useState("");
   const [gameStatus, setGameStatus] = useState("");
-  const [message, setMessage] = useState(1);
+  const [message, setMessage] = useState(null);
 
   // const socket = useMemo(() => io("http://localhost:8000"), []);
-  const socket = useMemo(() => io("https://rock-paper-game-alpha.vercel.app/"), []);
+  const socket = useMemo(() => io("http://localhost:8000"), []);
   console.log(socket)
   
 
@@ -40,6 +40,7 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
     socket.on("resiveMessage", (m) => {
       setMessage(m);
     });
+
     socket.on("RoomCreated",(m)=>{
       alert(m)
     })
@@ -63,7 +64,7 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
   const sendMessage = (choice) => {
     socket.emit("choice", choice, roomID);
     console.log(choice);
-    // setMessage('');
+    // setMessage(null);
   };
 
   return (
@@ -80,6 +81,7 @@ export default function Multiplayer({ SetMultiplayerMode, multiplayerMode }) {
         mode={"friend"}
         sendMessage={sendMessage}
         message={message}
+        setMessage={setMessage}
         SetMultiplayerMode={SetMultiplayerMode  }/>
       ) : (
         <div className="resuletboard">

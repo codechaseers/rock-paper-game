@@ -2,21 +2,22 @@ import express from "express";
 import { createServer } from "http"
 // import { send } from "process";
 import { Server } from "socket.io";
+import cors from 'cors'
+import { log } from "console";
 
-const app=express()
-const port="8000"
+const app = express()
+const port = 8000
+app.use(cors());
 //Normal server creat 
-const server=createServer(app)
+const server = createServer(app)
 
 
 //io server creating
 const io = new Server(server, {
     cors: {
-        origin: "https://rock-paper-game-alpha-azure.vercel.app",
-
-        methods: ["GET", "POST"],
-        credentials: true
-    }
+        origin: "*"
+    },
+    pingTimeout: 60000
 });
 // io.on("connection",(socket)=>{
 //     console.log("id is : ",socket.id)
@@ -31,7 +32,7 @@ const io = new Server(server, {
 //         console.log(fid)
 //         io.to(fid).emit("resiveMessage",fid)
 //     })
- 
+
 //     socket.on("join-room", (room) => {
 //         socket.join(room);
 //         console.log(`User joined room ${room}`);
@@ -48,16 +49,18 @@ io.on('connection', (socket) => {
         const roomExists = rooms.get(room);
 
         // Allow a maximum of two clients in a room.
-        if (roomExists && roomExists.size <2) {
+        if (roomExists && roomExists.size < 2) {
             socket.join(room);
             socket.to(room).emit('roomJoined', room);
             console.log(` ${socket.id} joined room: ${room}`);
             // Notify both clients in the room that the game can start.
+
+
             io.to(room).emit('gameStart', `Game starting in room: ${room}`);
 
         } else if (!roomExists) {
             socket.join(room);
-            socket.emit("RoomCreated",`Room ${room} created`)
+            socket.emit("RoomCreated", `Room ${room} created`)
             console.log(`Room ${room} created`);
         } else {
             // Room is full or some other logic
@@ -65,18 +68,20 @@ io.on('connection', (socket) => {
             console.log(`Cannot join room ${room}, it's full.`);
         }
     });
-socket.on('choice',(message,room)=>{
-    socket.to(room).emit("resiveMessage",message)
-})
+    socket.on('choice', (message, room) => {
+        console.log(message)
+        socket.to(room).emit("resiveMessage", message)
+    })
+
     socket.on('disconnect', () => {
         console.log('User disconnected', socket.id);
     });
 });
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     console.log("server start");
-    res.status(200).json( {"message":"hii form the server"})
+    res.status(200).json({ "message": "hii form the server" })
 })
-server.listen(port,()=>{
+server.listen(port, () => {
     console.log(`app lisisten on port ${port}`);
 })
