@@ -2,6 +2,8 @@ import Game from "./Game";
 import Resuletboard from "./Resuletboard";
 import clicksound from "../assets/audio/clickSound.mp3";
 import pointsound from "../assets/audio/point.mp3";
+import pointLosssound from "../assets/audio/pointLoss.mp3";
+
 import { useState, useEffect } from "react";
 
 const Gamelogic = ({
@@ -60,7 +62,7 @@ const Gamelogic = ({
         setMessage(null);
       }, 2000);
     } else if (rules[player1] === player2) {
-      console.log("player 1 win");
+      // console.log("player 1 win");
       new Audio(pointsound).play();
 
       setPlayer1Score((prevScore) => prevScore + 1);
@@ -71,8 +73,8 @@ const Gamelogic = ({
         setMessage(null);
       }, 2000);
     } else {
-      new Audio(pointsound).play();
-      console.log("player 2 win");
+      new Audio(pointLosssound).play();
+      // console.log("player 2 win");
 
       setPlayer2Score((prevScore) => prevScore + 1);
 
@@ -88,6 +90,7 @@ const Gamelogic = ({
   //Game over Logic
   const gameOver = () => {
     if (player1Score == 3 || player2Score == 3) {
+      
       setTimeout(() => {
         // setPlayer1Score(0)
         // setPlayer2Score(0)
